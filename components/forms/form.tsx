@@ -68,8 +68,8 @@ export default function Form() {
             {isFailModal && <FailModal closeModal={closeModal} />}
             {isLoading && <Loading />}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-blue-400 opacity-30 animate-pulse"></div>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row relative z-10 space-y-12 md:space-y-0 md:space-x-32">
-                <div className="md:w-1/2 bg-white p-8 rounded-lg shadow-md space-y-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row relative z-0 space-y-12 md:space-y-0 md:space-x-32">
+                <div className="md:w-1/2 bg-white p-8 rounded-lg shadow-md space-y-8 order-2 md:order-1">
                     <h2 className="text-3xl font-extrabold text-gray-900 mb-6">Contato</h2>
                     <form id="formulario" onSubmit={formik.handleSubmit} className="space-y-6">
                         <div>
@@ -123,6 +123,7 @@ export default function Form() {
                                     value={formik.values.phone}
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
+                                    maxLength={13}
                                 />
                             </div>
                         </div>
@@ -166,7 +167,7 @@ export default function Form() {
                         </div>
                     </form>
                 </div>
-                <div className="md:w-1/2 flex items-center justify-center">
+                <div className="md:w-1/2 flex items-center justify-center order-1 md:order-2">
                     <div className="px-4 md:px-0 ml-2 mb-16 text-center md:text-left space-y-8" id="texts">
                         <h1 className="text-black text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6 md:mb-8">
                             <span>Evolua sua empresa com sistemas personalizados</span>
